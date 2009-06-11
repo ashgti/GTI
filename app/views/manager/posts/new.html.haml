@@ -1,0 +1,4 @@
+%h1.editor_title Add New Post
+=error_messages_for @post
+=form_for(@post, :action => url(:manager_posts)) do
+  =partial :post

@@ -1,0 +1,15 @@
+%h1 Posts List
+%table
+  %tr
+    %th
+      Title
+    %th 
+      Actions
+  - for post in @posts
+    %tr
+      %td
+        =h post.title
+      %td
+        =link_to 'Edit', resource(:manager, post, :edit)
+
+=link_to 'New', url(:new_manager_post)

@@ -1,0 +1,5 @@
+-throw_content :title, "#{@post.title} Edit "
+%h1.editor_title Edit Post
+=error_messages_for @post
+=form_for(@post, :action => resource(:manager, @post)) do
+  =partial :post

@@ -1,0 +1,7 @@
+%h1 Articles
+-if @posts.count > 0
+  .post_listing
+    -@posts.each do |post|
+      %p=link_to post.title, url(:post, :slug => post.slug)
+-else
+  .notice.not_articles No Articles Yet

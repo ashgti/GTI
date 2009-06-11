@@ -1,0 +1,257 @@
+!purple = #662d91
+!white = #ffffff
+!lightpurple = #c590db 
+
+body
+  :background #f9f9f9
+  :font-family Helvetica, Arial, Verdana, sans-serif
+  :font-size 12px
+  :margin 0
+
+*
+  :margin 0px
+  :padding 0px
+  :text-decoration none
+
+html
+  :height 100%
+  :margin-bottom 1px  
+
+.notice
+  :background 
+    :color #c9ec76
+  :color #365662
+  :padding 5px
+  :display block
+
+ul, ol
+  :margin-left 25px
+
+pre
+  :margin-left 10px
+  
+  ol
+    :margin-left 50px
+    
+
+blockquote
+  :margin-left 25px
+  p
+    :font-style italic 
+  
+fieldset
+  legend
+    :font
+      :size 1.3em
+      :weight bold
+  :margin-top 15px
+  :padding 15px
+  :-webkit-border-radius 4px
+  :-moz-border-radius 4px
+
+.content
+  :padding 5px
+  
+form
+  :width 400px
+  :text-align right
+  label
+    :font
+      :size 1.2em
+      :weight bold
+  input[type=text],input[type=password]
+    :font
+      :weight bold
+      :size 1.2em
+    :padding 5px
+    :margin 5px 0 5px 10px
+    :border 1px solid #CCCCCC
+    :-webkit-border-radius 4px
+    :-moz-border-radius 4px
+    &:focus
+      :border 1px solid #000000
+  input[type=submit]
+    :font
+      :weight bold
+      
+td form
+  :width auto
+  :text-align right
+  label
+    :font
+      :size 1.2em
+      :weight bold
+  input[type=text],input[type=password]
+    :font
+      :weight bold
+      :size 1.2em
+    :padding 5px
+    :margin 5px 0 5px 10px
+    :border 1px solid #CCCCCC
+    :-webkit-border-radius 4px
+    :-moz-border-radius 4px
+    &:focus
+      :border 1px solid #000000
+  input[type=submit]
+    :font
+      :weight bold
+
+table
+  :border-collapse collapse
+  :border-spacing 0
+  :width 400px
+  :font-size 1.2em
+  :margin-top 10px
+  th
+    :text-align left
+    :padding 5px
+    :font-weight bold
+    :border-bottom 1px solid gray
+  td
+    :padding 5px
+    :border-bottom 1px solid #CCCCCC
+  
+
+hr
+  :border 0px
+  :color #ccc
+  :background-color #cdcdcd
+  :height 1px
+  :width 100%
+  :text-align left
+
+
+h1
+  :font-size 2.5em
+  :font-family Arial, Verdana, sans-serif
+  :font-weight bold
+
+h2
+  :font-size 2em
+  :color #666
+  :font-family Arial, Verdana, sans-serif
+  :font-weight bold
+  :margin-top 10px
+
+
+h3
+  :color = !purple 
+  :font-size 1.8em
+  :text-align left
+  :font-weight 300
+  :padding 5px
+  :margin-top 5px
+
+h4
+  :font-size 1.5em
+  :text-align left
+  :padding 5px
+
+p
+  :color #000
+  :line-height 20px
+  :padding 5px
+
+a
+  :color = !purple
+  :text-decoration none
+  :font-weight bold
+
+  &:hover
+    :color #4d9b12
+    :background-color #000000
+    :color #FFFFFF  
+
+.right
+  :float right
+  :font-size 100%
+  :margin-top 5px
+  :color #999
+  :background-color #fff
+
+
+.left
+  :float left
+  :font-size 100%
+  :margin-top 5px
+  :color #999
+  :background-color #fff
+
+#header
+  :background #464646
+  :height 48px
+  :display block
+  h1
+    :font-size 3em
+    a
+      :color #f9f9f9
+    a:hover
+      :background none
+      :color #9f9f9f
+
+#body_wrapper
+  :margin-left 175px
+  :display block
+
+ul#nav
+  :margin 15px 5px 15px -160px
+  :list-style none
+  :position relative
+  :float left
+  :clear left
+  :width 145px
+  strong
+    :text-shadow rgba(255,255,255,1) 0px 1px 0px
+  
+#main
+  :float left
+  :width 100%
+  h1, h2, h3, h4, h5, h6
+    :text-shadow rgba(255,255,255,1) 0px 1px 0px
+  label
+    :clear both
+    :width 100px
+    :text-align left
+    :display block
+  form 
+    :width auto
+    
+#post_title
+  :width 99.5%
+  :padding 0
+  :font
+    :size 2em
+    :weight normal
+  :margin-left 0
+
+#editor 
+  :background #f00
+  form 
+    :width 0
+
+h1.editor_title
+  :font italic normal normal 24px/29px Georgia, "Times New Roman", "Bitstream Charter", Times, serif
+  :margin 0
+  :padding 14px 15px 3px 0
+  :line-height 35px
+  :text-shadow rgba(255,255,255,1) 0px 1px 0px
+  :color rgb(70, 70, 70)
+  
+#editor_sidebar
+  :width 285px
+  :clear right
+  :float right
+  :position relative
+
+#editor_body
+  :margin-right -305px
+  :width 100%
+  :clear left
+  :float left
+    
+#editor_content
+  :margin-right 305px
+
+.clearfix 
+  :clear both
+  :display block

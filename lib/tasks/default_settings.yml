@@ -1,0 +1,7 @@
+---
+:general:
+  :auto_load:
+    :blog_title: Example
+    :blog_description: An example blog made in Merb
+    :charset: UTF-8
+    :url_keys: titles
