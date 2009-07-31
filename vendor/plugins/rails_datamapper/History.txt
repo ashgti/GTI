@@ -1,5 +1,0 @@
-=== 0.9.11 / 2009-03-29
-
-* 1 minor enhancement:
-
-  * Added migration tasks

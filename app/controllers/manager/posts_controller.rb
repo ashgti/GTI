@@ -1,10 +1,14 @@
 module Manager
-  class Posts < Admin
+  class PostsController < AdminController
     # provides :xml, :yaml, :js
   
     def index
       @posts = Post.all
-      display @posts
+      
+      respond_to do |format|
+        format.html
+        format.xml  { render :xml => @posts }
+      end
     end
   
     def show(id)
@@ -14,23 +18,38 @@ module Manager
     end
   
     def new
-      only_provides :html
       @post = Post.new
-      display @post
+      respond_to do |format|
+        format.html
+      end
     end
   
-    def edit(id)
+    def edit
       only_provides :html
       @post = Post.get(id)
       raise NotFound unless @post
       display @post
     end
   
-    def create(post)
+    def create
+      @post = Post.new(params[:post])
+
+      respond_to do |format|
+        if @post.save
+          flash[:notice] = 'Post was successfully created.'
+          format.html { redirect_to(@post) }
+          format.xml  { render :xml => @post, :status => :created,
+    	                :location => @post }
+        else
+          format.html { render :action => "new" }
+          format.xml  { render :xml => @post.errors,
+    	                :status => :unprocessable_entity }
+        end
+      end
+      
+      
       @post = Post.new(post)
       @post.user_id = self.session.user.id
-      
-      Merb.logger.debug "\n\nSession User: #{self.session.user.class} and #{self.session.user.inspect}\n\n"
       
       if @post.save
         redirect resource(:manager, @post), :message => {:notice => "Post was successfully created"}

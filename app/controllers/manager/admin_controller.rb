@@ -1,10 +1,8 @@
 module Manager
-  class Admin < ::Application
-    layout :admin
-    
-    before do
-      self.scripts = ['jquery', 'app']
-      self.stylesheets = ['admin/screen']
+  class AdminController < ::ApplicationController
+    def initialize
+      @scripts = ['jquery-1.3.2.min', 'app']
+      @styles = ['admin/screen']
     end
   end
 end

@@ -1,0 +1,60 @@
+-@scripts << 'tiny_mce/tiny_mce'
+-content_for :js do
+  :javascript
+    tinyMCE.init({
+      mode : "textareas",
+      theme : "advanced",
+      width : "100%",
+      theme_advanced_buttons1 : "bold,italic,strikethrough,|,bullist,numlist,blockquote,|,justifyleft,justifycenter,justifyright,|,link,unlink,|,spellchecker,fullscreen,code",
+      theme_advanced_buttons2 : "",
+      theme_advanced_toolbar_location : "top",
+      skin : "o2k7",
+      plugins : "fullscreen,spellchecker,tabfocus",    
+      skin_variant : "black",
+      theme_advanced_toolbar_align : "left",
+      theme_advanced_statusbar_location : "bottom",
+      theme_advanced_resizing : true,
+      accessibility_focus:"1", 
+      theme_advanced_resize_horizontal:"", 
+      dialog_type:"modal",
+      tab_focus : ':prev,:next'
+    });
+-form_for [:manager, post], :url => manager_posts_path do |p|
+  #editor
+    #editor_sidebar
+      #publish.box
+        %h3 Publish
+        %p
+          Status:
+          =post.status
+        =p.submit "Save", :id => "save_button"
+        =p.submit "Publish", :id => "publish_button"
+      #tags.box
+        %h3 Tags
+        %p 
+          Tags:
+          =p.text_field :tags
+      #categories.box
+        %h3 Categories
+        %ul 
+          %li=#p.check_box :name => 'one', :label => "One"
+          %li=#p.check_box :name => 'two', :label => "Two"
+    #editor_body
+      #editor_content
+        #title_wrap
+          =p.text_field :title, :tabindex => 1
+          #slug_wrap
+            =p.text_field :slug, :label => "Slug"
+        #content_wrap 
+          #media_links
+            IMGs | Video | Audio | Media
+          .tabs
+            %div
+              HTML
+            %div
+              Visual
+              =p.text_area :body, :rows => 10, :cols => 5, :tabindex => 2
+              %div
+                %span
+                  Word Count
+                  = 0 

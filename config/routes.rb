@@ -1,43 +1,51 @@
 ActionController::Routing::Routes.draw do |map|
-  # The priority is based upon order of creation: first created -> highest priority.
+  map.namespace :manager, :member => { :remove => :get } do |admin|
+    admin.resources :pages do |pages|
+      pages.resources :children, :controller => "pages"
+    end
+    admin.resources :posts do |posts|
+      posts.resources :comments
+    end
+    admin.resources :layouts
+    admin.resources :snippets
+    admin.resources :layouts
+    admin.resources :chunks
+    admin.resources :users
+  end
+ 
+  map.namespace :manager do |admin|
+    admin.resource :preferences
+    admin.resources :extensions
+    admin.resources :page_parts
+    admin.resources :references
+  end
+ 
+  # Admin Routes
+  map.with_options(:controller => 'manager/welcome') do |welcome|
+    welcome.admin          'manager',                              :action => 'index'
+    welcome.welcome        'manager/welcome',                      :action => 'index'
+    welcome.login          'manager/login',                        :action => 'login'
+    welcome.logout         'manager/logout',                       :action => 'logout'
+  end
+ 
+  # Site URLs
+  map.with_options(:controller => 'blogger') do |site|
+    site.root                                                    :action => 'show_page', :url => '/'
+    site.not_found         'error/404',                          :action => 'not_found'
+    site.error             'error/500',                          :action => 'error'
+ 
+    site.connect           'ajax/*url',                          :aciton => 'ajax_response'
+    # Everything else
+    site.connect           '*url',                               :action => 'show_page'
+  end
+ 
+  # map.namespace :manager do |admin|
+  #   admin.resources :posts
+  # end
+  # 
+  # map.connect '/login', :controller => 'session', :action => 'new'
+  # map.connect '/logout', :controller => ''
+  # 
+  # map.root :controller => "blogger"
 
-  # Sample of regular route:
-  #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
-  # Keep in mind you can assign values other than :controller and :action
-
-  # Sample of named route:
-  #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
-  # This route can be invoked with purchase_url(:id => product.id)
-
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   map.resources :products
-
-  # Sample resource route with options:
-  #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }
-
-  # Sample resource route with sub-resources:
-  #   map.resources :products, :has_many => [ :comments, :sales ], :has_one => :seller
-  
-  # Sample resource route with more complex sub-resources
-  #   map.resources :products do |products|
-  #     products.resources :comments
-  #     products.resources :sales, :collection => { :recent => :get }
-  #   end
-
-  # Sample resource route within a namespace:
-  #   map.namespace :admin do |admin|
-  #     # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
-  #     admin.resources :products
-  #   end
-
-  # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  # map.root :controller => "welcome"
-
-  # See how all your routes lay out with "rake routes"
-
-  # Install the default routes as the lowest priority.
-  # Note: These default routes make all actions in every controller accessible via GET requests. You should
-  # consider removing the them or commenting them out if you're using named routes and resources.
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
 end

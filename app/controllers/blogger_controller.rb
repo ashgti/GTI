@@ -1,14 +1,19 @@
-class Blogger < Application
-  provides :xml, :yaml, :js, :html
+class BloggerController < ApplicationController
+  def show_page
+    @content = Page.first(:conditions => {:slug => params[:url]})
 
-  def index
-    @posts = Post.all
-    display @posts
+    @content.process(request, response)
+  end
+  
+  def not_found
   end
 
-  def show(slug)
-    @post = Post.first(:slug => slug)
-    raise NotFound unless @post
-    display @post
+  def error
   end
-end # Posts
+  
+  def post_page
+  end
+  
+  def ajax_response
+  end
+end # BloggerController

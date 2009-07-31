@@ -3,7 +3,7 @@ require File.join(File.dirname(__FILE__), '..', 'spec_helper.rb')
 describe "url(:login)" do
   describe "GET" do
     before(:each) do
-      @response = request(url(:login))
+      @response = get(:login, { :username => '5'})
     end
     
     it "responds successfully" do
@@ -34,6 +34,17 @@ describe "url(:login)" do
       response = request(url(:perform_login), :method => "POST", 
         :params => { :'_method' => 'PUT', :login => 'admin', :password => 'password', :'Submit' => 'Log In'})
       response.should redirect_to(url(:manager_home))      
+    end
+  end
+end
+
+
+describe '#new' do
+  it "should default to the US country id" do
+    get :new
+    response.should render_template('new')
+    response.body.should have_tag("select#user_country_id") do |elem|
+      with_tag "option[value=US][selected=selected]"
     end
   end
 end

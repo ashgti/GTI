@@ -1,0 +1,72 @@
+pre {
+  border: 1px solid #ccc;
+  width: 90%;
+  margin: 15px auto;
+  padding: 5px;
+  line-height: 1.5;
+  background: url('/images/70.png') !important;
+  overflow: auto;
+  color: black !important; }
+
+code {
+  font-size: 1.2em; }
+
+.javascript .comment, .ruby .comment {
+  color: green; }
+
+.javascript .string, .ruby .string {
+  color: teal; }
+
+.javascript .keywords, .ruby .keywords {
+  color: purple; }
+
+.javascript .global, .ruby .global, .yaml .comment {
+  color: blue; }
+
+.javascript .brackets, .ruby .brackets {
+  color: navy; }
+
+.css .comment, .sass .comment {
+  color: gray; }
+
+.sass .weights {
+  font-weight: bold; }
+
+.css .properties, .sass .properties {
+  color: navy; }
+
+.css .selectors, .sass .selectors {
+  color: maroon;
+  font-weight: bold; }
+
+.css .units, .sass .units, .yaml .colon {
+  color: red; }
+
+.css .urls, .sass .urls, .yaml .key {
+  color: green; }
+
+.sass .colors {
+  color: teal; }
+
+.html .tag, .haml .tag {
+  color: purple; }
+
+.html .comment, .haml .comment, .yaml .header {
+  color: gray;
+  font-style: italic; }
+
+.yaml .terminator {
+  color: red; }
+
+.html .string, .haml .string {
+  color: navy; }
+
+.html .doctype, .haml .doctype, .yaml .directive {
+  color: teal; }
+
+.ruby .symbol {
+  color: green; }
+
+.ruby .classname {
+  color: maroon;
+  font-weight: bold; }

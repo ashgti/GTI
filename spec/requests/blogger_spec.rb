@@ -13,10 +13,10 @@ given 'no posts exist' do
   Post.all.destroy!
 end
 
-describe "url(:posts)" do
+describe "url(:posts)", :type => :integration do
   describe "GET" do
     before(:each) do
-      @response = request(url(:posts))
+      visit root_path
     end
     
     it "responds successfully" do

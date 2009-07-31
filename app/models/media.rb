@@ -1,3 +1,3 @@
-class Media < Post
-  property :mime, String, :length => (1..100)
+class Media < Content
+  ## Associations
 end

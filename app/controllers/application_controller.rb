@@ -7,4 +7,11 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password, :password_confirmation
+  
+  attr_accessor :scripts, :styles
+
+  def initialize
+    @scripts = []
+    @styles = ['screen']
+  end
 end

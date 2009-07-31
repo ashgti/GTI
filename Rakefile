@@ -8,3 +8,15 @@ require 'rake/testtask'
 require 'rake/rdoctask'
 
 require 'tasks/rails'
+
+desc 'Default: run spec examples'
+task :default => 'spec'
+
+def ask message, default = nil
+  print message 
+  if default
+    print "[#{default}] "
+  end
+  input = $stdin.gets.chomp
+  default ||= input
+end

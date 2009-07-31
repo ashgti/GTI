@@ -1,0 +1,195 @@
+body {
+  font-family: Helvetica, Arial, Verdana, sans-serif;
+  font-size: 12px;
+  background: url('/images/bg.png') no-repeat;
+  margin: 20px auto;
+  width: 840px;
+  background-color: #c590db; }
+
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none; }
+
+html {
+  height: 100%;
+  margin-bottom: 1px; }
+
+.notice {
+  background-color: #c9ec76;
+  color: #365662;
+  padding: 5px;
+  display: block; }
+
+ul, ol {
+  margin-left: 25px; }
+
+pre {
+  margin-left: 10px; }
+  pre ol {
+    margin-left: 50px; }
+
+blockquote {
+  margin-left: 25px; }
+  blockquote p {
+    font-style: italic; }
+
+fieldset {
+  margin-top: 15px;
+  padding: 15px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px; }
+  fieldset legend {
+    font-size: 1.3em;
+    font-weight: bold; }
+
+.content {
+  padding: 5px; }
+
+form {
+  width: 400px;
+  text-align: right; }
+  form label {
+    font-size: 1.2em;
+    font-weight: bold; }
+  form input[type=text], form input[type=password] {
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 5px;
+    margin: 5px 0 5px 10px;
+    border: 1px solid #CCCCCC;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px; }
+    form input[type=text]:focus,     form input[type=password]:focus {
+      border: 1px solid #000000; }
+  form input[type=submit] {
+    font-weight: bold; }
+
+td form {
+  width: auto;
+  text-align: right; }
+  td form label {
+    font-size: 1.2em;
+    font-weight: bold; }
+  td form input[type=text], td form input[type=password] {
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 5px;
+    margin: 5px 0 5px 10px;
+    border: 1px solid #CCCCCC;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px; }
+    td form input[type=text]:focus,     td form input[type=password]:focus {
+      border: 1px solid #000000; }
+  td form input[type=submit] {
+    font-weight: bold; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 400px;
+  font-size: 1.2em;
+  margin-top: 10px; }
+  table th {
+    text-align: left;
+    padding: 5px;
+    font-weight: bold;
+    border-bottom: 1px solid gray; }
+  table td {
+    padding: 5px;
+    border-bottom: 1px solid #CCCCCC; }
+
+hr {
+  border: 0px;
+  color: #ccc;
+  background-color: #cdcdcd;
+  height: 1px;
+  width: 100%;
+  text-align: left; }
+
+h1 {
+  font-size: 2.5em;
+  font-family: Arial, Verdana, sans-serif;
+  font-weight: bold; }
+
+h2 {
+  font-size: 2em;
+  color: #666;
+  font-family: Arial, Verdana, sans-serif;
+  font-weight: bold;
+  margin-top: 10px; }
+
+h3 {
+  color: #662d91;
+  font-size: 1.8em;
+  text-align: left;
+  font-weight: 300;
+  padding: 5px;
+  margin-top: 5px; }
+
+h4 {
+  font-size: 1.5em;
+  text-align: left;
+  padding: 5px; }
+
+p {
+  color: #000;
+  line-height: 20px;
+  padding: 5px; }
+
+a {
+  color: #662d91;
+  text-decoration: none;
+  font-weight: bold; }
+  a:hover {
+    color: #4d9b12;
+    background-color: #000000;
+    color: #FFFFFF; }
+
+.right {
+  float: right;
+  font-size: 100%;
+  margin-top: 5px;
+  color: #999;
+  background-color: #fff; }
+
+.left {
+  float: left;
+  font-size: 100%;
+  margin-top: 5px;
+  color: #999;
+  background-color: #fff; }
+
+#container {
+  min-height: 500px;
+  background: url('/images/85.png');
+  border: 1px solid #999;
+  width: 800px;
+  padding: 14px;
+  margin: 0 15px;
+  position: relative; }
+
+#header {
+  position: absolute; }
+  #header h1 {
+    font-size: 3em; }
+
+#nav {
+  top: 50px;
+  width: 60px;
+  background: #ff0;
+  position: absolute; }
+
+#main {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  width: 700px;
+  background: #00f; }
+
+#main_content {
+  margin-left: 100px; }
+
+.clearfix {
+  clear: both;
+  display: block; }

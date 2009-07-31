@@ -1,7 +1,7 @@
 # Be sure to restart your server when you modify this file
 
 # Specifies gem version of Rails to use when vendor/rails is not present
-RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '2.3.3' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
@@ -19,13 +19,26 @@ Rails::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
-  config.gem 'data_objects'
-  config.gem 'do_mysql'
-  config.gem 'dm-core'
+  config.gem 'data_objects', :version => '0.9.12'
+  config.gem 'do_mysql', :version => '0.9.12'
+  config.gem 'extlib', :versoin => '0.9.12'
+  config.gem 'dm-core', :version => '0.9.11'
+  config.gem "dm-aggregates", :version => '0.9.11'
+  config.gem "dm-migrations", :version => '0.9.11'
+  config.gem "dm-timestamps", :version => '0.9.11'
+  config.gem "dm-types", :version => '0.9.11'
+  config.gem "dm-validations", :version => '0.9.11'
+  config.gem "dm-serializer", :version => '0.9.11'
+  config.gem "dm-is-versioned", :version => '0.9.11'
+  config.gem "rails_datamapper", :version => '0.9.11'
+  require 'sass'
+  config.gem "rspec", :lib => false, :version => ">= 1.2.0"
+  config.gem "rspec-rails", :lib => false, :version => ">= 1.2.0"
+  config.gem "rails_warden"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
-  config.plugins = [ :rails_datamapper, :all ]
+  config.plugins = [ :all ]
 
   # Skip frameworks you're not going to use. To use Rails without a database,
   # you must remove the Active Record framework.
